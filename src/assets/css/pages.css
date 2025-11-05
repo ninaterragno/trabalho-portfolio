@@ -1,3 +1,10 @@
 main{
     min-height: calc(100vh - 144px);  
 }
+
+.img-projeto {
+    width: 1000px;       /* ajuste o valor como quiser */
+    height: auto;       /* mantém proporção */
+    display: block;     /* opcional: remove espaço embaixo da imagem */
+    margin: 0 auto;     /* centraliza horizontalmente */
+}
