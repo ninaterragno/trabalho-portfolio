@@ -140,3 +140,9 @@ footer {
 .redes-sociais img:hover {
   transform: scale(1.1);
 }
+
+/* Cor dos botões no carrossel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(27%) sepia(97%) saturate(6300%) hue-rotate(340deg) brightness(90%) contrast(90%);
+}
