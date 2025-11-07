@@ -7,6 +7,10 @@ header{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-image: url(../img/ceu.jpg);
+    background-repeat: no-repeat;       /* impede que a imagem se repita */
+    background-size: cover;             /* faz a imagem cobrir toda a área */
+    background-position: center center; /* centraliza a imagem */
 
     .container{
         z-index: 1;
@@ -14,7 +18,7 @@ header{
     }
 
     .bg-container{
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.3));
+        background: linear-gradient(rgba(35, 198, 223, 0.6), rgba(16, 103, 166, 0.3));
         padding: 35px;
         box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
         border-radius: 10px;
@@ -31,7 +35,7 @@ header{
 }
 
 .btn-gradient{
-    background: linear-gradient(135deg, #ff7676, #f54ea2);
+    background: linear-gradient(135deg, #0014ca, #6f39c6);
     border: none;
     color: #fff;
     transition: all 0.3s;
@@ -56,12 +60,13 @@ body{
 }
 
 .bg-gradient-pink{
-    background: linear-gradient(135deg, #f54ea2, #ff7676);
+    background: linear-gradient(135deg, #b204f7, #62007a);
     color: #fff;
 }
 
 .card-hover{
     transition: transform 0.3s, box-shadow 0.3s;
+    
 
     &:hover{
         transform: translateY(-10px);
@@ -75,7 +80,51 @@ body{
     border-radius: 10px;
 }
 
-footer{
-    background: #222;
-    color: #fff;
+.navbar {
+  background: #222;
+  font: #fff;
+}
+
+.custom-caption {
+  background: linear-gradient(135deg, rgba(124, 124, 123, 0.85), rgba(113, 229, 250, 0.85));
+  color: black;
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  padding: 15px 40px;
+  position: relative; /* Necessário para o posicionamento dos ícones */
+  text-align: center; /* Centraliza o texto dentro do footer */
+}
+
+/* Container principal */
+.footer-container {
+  position: relative;
+}
+
+/* Texto centralizado */
+.footer-container p {
+  margin: 0;
+}
+
+/* Redes sociais fixadas à direita */
+.redes-sociais {
+  position: absolute;
+  right: 40px;   /* distância da borda direita */
+  top: 50%;
+  transform: translateY(-50%); /* centraliza verticalmente */
+  display: flex;
+  gap: 15px;
+}
+
+/* Estilo dos ícones */
+.redes-sociais img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.2s ease;
+}
+
+.redes-sociais img:hover {
+  transform: scale(1.1);
 }
