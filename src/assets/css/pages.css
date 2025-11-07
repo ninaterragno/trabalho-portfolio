@@ -1,8 +1,9 @@
+/* Define altura mínima do <main> para ocupar quase toda a tela.*/
 main{
     min-height: calc(100vh - 144px);  
     
 }
-
+/* Define imagem de fundo*/
 body{
     background-image: url(../img/fundo-pages.jpg);
     background-repeat: no-repeat;       /* impede que a imagem se repita */
@@ -10,45 +11,49 @@ body{
     background-position: center; /* centraliza a imagem */
 }
 
-/* Corpo principal da página */
+ 
 main.container {
-
-  margin-top: 120px; /* distância do topo por causa do menu fixo */
+  /* Margens superior e inferior para dar espaço ao conteúdo */
+  margin-top: 120px; 
   margin-bottom: 60px;
-  background: rgba(255, 255, 255, 0.95);
+  /* Fundo branco com transparência para destacar o conteúdo */
+  background: rgba(255, 255, 255, 0.95); 
+  /* Bordas arredondadas e sombra suave */
   border-radius: 16px;
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+  /* Espaçamento interno */
   padding: 40px;
+   /* Transição suave quando o container é “hovered” */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+/* Efeito de flutuar quando o usuário passa o mouse */
 main.container:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* Títulos */
+/* Estilo do título principal */
 main h1 {
   text-align: center;
   font-weight: 700;
   color: #1a1a1a;
   margin-bottom: 30px;
 }
-
+/* Subtítulos */
 main h4 {
   color: #333;
   margin-top: 25px;
   font-weight: 600;
 }
 
-/* Texto do parágrafo */
+/* Parágrafos de texto */
 main p {
   color: #555;
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.6;  /* aumenta o espaçamento entre linhas */
 }
 
-/* Imagem do projeto */
+/* Centraliza a imagem, limita a largura e aplica sombra */
 .img-projeto {
   display: block;
   margin: 0 auto 30px auto;
@@ -59,19 +64,21 @@ main p {
   transition: transform 0.3s ease;
 }
 
+/* Container das colunas (descrição e tecnologias) */
 #colunas{
     margin: 0 auto 30px auto;
     width: 100%;
     max-width: 900px;
 }
 
+/* Pequeno zoom na imagem quando o mouse passa por cima */
 .img-projeto:hover {
   transform: scale(1.02);
 }
 
-/* Botões */
+/* Estilo base dos botões dentro do main */
 main button {
-  background: linear-gradient(90deg, #007bff, #0056b3);
+  background: linear-gradient(90deg, #007bff, #0056b3); /* gradiente azul */
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -82,25 +89,29 @@ main button {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
+/* Efeito hover nos botões (escurece o gradiente e aumenta levemente) */
 main button:hover {
   background: linear-gradient(90deg, #0056b3, #003d82);
   transform: scale(1.05);
 }
 
-/* Ajuste responsivo */
+/* Ajuste responsivo telas pequenas */
 @media (max-width: 768px) {
+   /* Reduz o padding interno do container */
   main.container {
     padding: 25px;
   }
-
+  /* Diminui o tamanho do título principal */
   main h1 {
     font-size: 1.6rem;
   }
 
+  /* Faz a imagem ocupar toda a largura da tela */
   .img-projeto {
     max-width: 100%;
   }
 
+  /* Botões ocupam toda a largura e ficam empilhados */
   main button {
     display: block;
     width: 100%;

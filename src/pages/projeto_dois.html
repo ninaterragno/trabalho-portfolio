@@ -20,7 +20,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#">Portfolio</a>
+          <a class="navbar-brand" href="../../index.html">Portfolio</a>
           <button class="navbar-toggler" 
             type="button" 
             data-bs-toggle="collapse" 
@@ -34,13 +34,13 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="/trabalho-portfolio/index.html#sobre">Sobre</a>
+                <a class="nav-link" href="../../index.html#sobre">Sobre</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/trabalho-portfolio/index.html#formação">Formação</a>
+                <a class="nav-link" href="../../index.html#formação">Formação</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/trabalho-portfolio/index.html#projetos">Projetos</a>
+                <a class="nav-link" href="../../index.html#projetos">Projetos</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#contato" 
@@ -51,7 +51,7 @@
           </div>
         </div>
       </nav>
-
+      <!-- Conteudo principal  -->
       <main class="container mt-5">
         <div class="row">
             <div class="col-12">
@@ -62,7 +62,6 @@
 
                 <div id="colunas">
                       <div class="row mt-4 text-center justify-content-center align-items-start">
-                      <!-- Coluna 1: Descrição -->
                       <div class="col-md-6">
                         <h4>Descrição:</h4>
                         <p>
@@ -71,7 +70,6 @@
                         </p>
                       </div>
 
-                      <!-- Coluna 2: Tecnologias -->
                       <div class="col-md-6">
                         <h4>Tecnologias Utilizadas:</h4>
                         <p>HTML, CSS, JavaScript, Bootstrap</p>
@@ -82,13 +80,19 @@
                 </div>
    
             <div class="text-center justify-content-center align-items-center">
-              <button>Ver no GitHub</button>
-              <button>Ver versão online</button>
+              <a href="https://github.com/ninaterragno/portfolio-aula-14">
+                <button>Ver no GitHub</button>
+              </a>
+
+              <a href="https://ninaterragno.github.io/portfolio-aula-14/">
+                <button>Ver versão online</button>
+              </a>
+             
             </div>
         </div>
       </main>
 
-       <!-- Modal Contato -->
+        <!-- Modal Contato -->
        <div class="modal fade" id="contatoModal" tabindex="-1" 
           aria-labelledby="contatoModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -99,25 +103,34 @@
                 data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-              <form>
+              <form id="form-contato">
                 <div class="mb-3">
-                  <label for="nome" class="form-label">Nome</label>
+                  <label for="nome" class="form-label">Nome Completo</label>
                   <input type="text" class="form-control" id="nome" 
-                    placeholder="Seu nome" />
+                    placeholder="Seu nome" required maxlength="40"/>
                 </div>
 
                 <div class="mb-3">
                   <label for="email" class="form-label">E-mail</label>
                   <input type="email" class="form-control" id="email" 
-                    placeholder="Seu e-mail" />
+                    placeholder="Seu e-mail" required 
+                    oninvalid="this.setCustomValidity('Informe um e-mail válido.')"
+                    oninput="this.setCustomValidity('')"
+                    />
                 </div>
 
                 <div class="mb-3">
                   <label for="mensagem" class="form-label">Mensagem</label>
                   <textarea id="mensagem" class="form-control"
-                    rows="4" placeholder="Escreva sua mensagem"></textarea>
+                    rows="4" placeholder="Escreva sua mensagem" required maxlength="500"></textarea>
                 </div>
                 <button type="submit" class="btn btn-gradient w-100">Enviar</button>
+
+                <div id="msg-sucesso" class="alert alert-success mt-3 d-none" role="alert">
+                  Enviado com sucesso, obrigada pelo contato!
+                </div>
+
+                
               </form>
             </div>
           </div>
@@ -130,12 +143,13 @@
 
             <div class="redes-sociais">
               <a href="https://github.com/ninaterragno" target="_blank">
-            <img src="../assets/img/github.png" alt="Rede Social GitHub">
+            <img src="../assets/img/github.png" alt="Icone GitHub">
           </a>
 
-              <a href="https://linkedin.com/in/seulinkedin" target="_blank">
-            <img src="../assets/img/linkedin.png" alt="Rede Social Linkedin">
+              <a href="https://www.linkedin.com/in/carolini-terragno-dos-santos-776a49397" target="_blank">
+            <img src="../assets/img/linkedin.png" alt="Icone Linkedin">
           </a>
+
             </div>
           </div>
         </footer>
@@ -145,6 +159,17 @@
 
     <script>
         AOS.init({duration: 1000, once: true});
+    </script>
+
+    <script>
+        document.getElementById('form-contato').addEventListener('submit', function(e) {
+          e.preventDefault(); 
+
+          const msg = document.getElementById('msg-sucesso');
+          msg.classList.remove('d-none');
+
+          this.reset();
+          });
     </script>
 </body>
 </html>
